@@ -1,0 +1,13 @@
+x = 1
+y = 2
+if x == 2:
+    print("X is equal to 2.")
+    
+if y == 2:
+    print("Y is equal to 2.")
+    
+if x == y is true:
+    print("It's true that x is equal to y.")
+
+else:
+    print("It is not true that x is equal to y.")

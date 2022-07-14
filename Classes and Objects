@@ -1,0 +1,17 @@
+class MyClass:
+    variable = "blah"
+    
+    def function(self):
+        print("This is a message inside a class."
+        
+myobjectx = MyClass()
+myobjecty = MyClass()
+
+myobjecty = "Yakk"
+print(myobjectx.variable)
+        
+class NumberHolder:
+    def__init__(self, number)
+        self.number = number
+        
+        

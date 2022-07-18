@@ -1,0 +1,13 @@
+phonebook = {
+    "john" : 3459546720,
+    "jackie" : 3458720821,
+    "bart" : 3451120389,
+}
+print{phonebook}
+
+for name, number in phonebook.items():
+    print("Phone number of %s is %d" % (name, number))
+
+phonebook.pop("John")
+print(Phonebook)
+    

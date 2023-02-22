@@ -1,0 +1,5 @@
+startNumb = int(input("What number would you like to start at? "))
+endNumb = int(input("What number would you like to end at? "))
+increment = int(input("By what increment would you like to count? "))
+for i in range(startNumb, endNumb, increment):
+  print(i)

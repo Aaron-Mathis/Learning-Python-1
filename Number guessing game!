@@ -1,0 +1,20 @@
+correctNumb = 185739
+guess = 0
+while True:
+  guessNumb = int(input("Can you guess what number I'm thinking of? Choose a number now ... "))
+  if guessNumb < 0:
+    print("You think you're clever? GAME OVER!")
+    exit()
+  elif guessNumb != correctNumb:
+    print("Wrong!")
+    if guessNumb < correctNumb:
+      print("Too low!")
+    if guessNumb > correctNumb:
+      print("Too high!")
+    guess += 1
+    print()
+    continue
+  else:
+    print("You did it! Your eternal torture is over!")
+    print("You guessed", guess, "times! Jeez!")
+    print()

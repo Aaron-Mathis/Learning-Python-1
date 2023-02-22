@@ -1,0 +1,5 @@
+borrowed = 1000
+for counter in range(10):
+  counter += 1
+  borrowed = borrowed*1.05
+  print(round(borrowed,2))

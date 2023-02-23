@@ -1,0 +1,24 @@
+import random
+rand = random.randint(1, 1000)
+guess = 0
+print("Can you guess what number I'm thinking of?")
+print()
+while True:
+  guessNumb = int(input("Choose a number between 1 and 1000: "))
+  if guessNumb < 0:
+    print("You think you're clever? GAME OVER!")
+    exit()
+  elif guessNumb != rand:
+    print("Wrong!")
+    if guessNumb < rand:
+      print("Too low!")
+    if guessNumb > rand:
+      print("Too high!")
+    guess += 1
+    print()
+    continue
+  else:
+    print("You did it! Your eternal torture is over!")
+    print("It took you", guess, "guesses! Jeez!")
+    print()
+    exit()

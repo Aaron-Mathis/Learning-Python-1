@@ -1,0 +1,16 @@
+import random
+
+def rollDice(sides):
+  rand = random.randint(1, sides)
+  print("You rolled ", rand)
+  rollAgain = input("Roll again? ")
+  if rollAgain == "yes":
+    print()
+    rollDice(sides)
+  else:
+    exit()
+  
+print("Roll some dice!")
+sides = int(input("How man sides would you like on your dice? "))
+print()
+rollDice(sides)

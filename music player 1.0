@@ -1,0 +1,25 @@
+from replit import audio
+import os, time
+
+
+def play():
+  source = audio.play_file('audio.wav')
+  source.paused = False
+  print("Press 1 to pause.")
+  print("Press 2 to exit")
+  userInput = int(input(""))
+  if userInput == 1:
+    source.paused = True
+    os.system("clear")
+    print("Press 2 to exit.")
+    print("Press 3 to play.")
+    userInput = int(input(""))
+  if userInput == 3:
+    os.system("clear")
+    play()
+  if userInput == 2:
+    exit()
+
+print("Welcome to radio Replit")    
+play()                    
+    

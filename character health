@@ -1,0 +1,22 @@
+import random
+def rollDice():
+  sides = int(input("How many sides would you like on your dice? "))
+  rand = random.randint(1, sides)
+  return rand
+                    
+def rollHealth():
+  roll6 = random.randint(1,6)
+  roll8 = random.randint(1,8)
+  health = roll6 * roll8
+  return health
+  
+anotherCharacter = "yes"
+while anotherCharacter == "yes":
+  characterName = input("Name your champion: ")
+  characterHealth = rollHealth()
+  print("Their health is", characterHealth)
+  print()
+  anotherCharacter = input("Create another character? ")
+  
+  
+

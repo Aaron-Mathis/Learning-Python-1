@@ -1,0 +1,39 @@
+import random
+import os
+import time
+
+
+def characterType():
+  charName = input("Name your champion: ")
+  charType = input("Be they Human, Orc, Elf, or Goblin? ")
+  print()
+  print(charName, "the", charType)
+
+def characterStats():
+  sixDice = random.randint(1,6)
+  twelveDice = random.randint(1,12)
+  charHealth = (((sixDice*twelveDice) / 2) + 10)
+  charStrength = (((sixDice*twelveDice) / 2) +12)
+  print("Health: ", charHealth)
+  time.sleep(1)
+  print("Strength: ", charStrength)
+  print()
+
+createChar = "yes"
+
+while createChar == "yes":
+  print("Create a champion!")
+  print()
+  time.sleep(1)
+  characterType()
+  time.sleep(1)
+  characterStats()
+  time.sleep(1)
+  createChar = input("Create another? ")
+
+if createChar == "no":
+  print()
+  print("Their legend will echo through the halls of time!")
+  time.sleep(5)
+  os.system("clear")
+  

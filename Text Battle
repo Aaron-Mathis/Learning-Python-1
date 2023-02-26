@@ -1,0 +1,85 @@
+import random
+import os
+import time
+
+
+def characterType():
+  charName = input("Name your champion: ")
+  charType = input("Be they Human, Orc, Elf, or Goblin? ")
+  print()
+  print(charName, "the", charType)
+  return charName
+
+def characterStats():
+  sixDice = random.randint(1,6)
+  twelveDice = random.randint(1,12)
+  charHealth = (((sixDice*twelveDice) / 2) + 10)
+  charStrength = (((sixDice*twelveDice) / 2) +12)
+  print("Health: ", charHealth)
+  time.sleep(1)
+  print("Strength: ", charStrength)
+  print()
+  return charHealth, charStrength
+
+
+print("A champion is born!")
+print()
+time.sleep(1)
+char1Name = characterType()
+char1Health, char1Strength = characterStats()
+print()
+time.sleep(1)
+print("Our second champion rises!")
+print()
+time.sleep(1)
+char2Name = characterType()
+char2Health, char2Strength = characterStats()
+
+while True:
+  strDif = char1Strength - char2Strength
+  char1Roll = random.randint(1,6)
+  char2Roll = random.randint(1,6)
+  if char1Roll > char2Roll:
+    char2Health = char2Health - (abs(strDif)+1)
+    print(char1Name, "strikes", char2Name, "!")
+    time.sleep(1)
+    print(char1Name, "has won the round!")
+    print()
+    
+  elif char2Roll > char1Roll:
+    char1Health = char1Health - (abs(strDif)+1)
+    print(char2Name, "strikes", char1Name, "!")
+    time.sleep(1)
+    print(char2Name, "has won the round!")
+    print()
+    
+  if char1Health < 1:
+    print(char2Name, "is victorious! Huzzah!")
+    time.sleep(1)
+    print("Bye!")
+    exit()
+  elif char2Health < 1:
+    print(char1Name, "is the winner!")
+    time.sleep(1)
+    print("The battle is over. Clear out!")
+    exit()
+
+  else:
+    print(char1Name, "health:", char1Health)
+    print(char2Name, "health:", char2Health)
+    print()
+    time.sleep(1)
+    print()
+    print()
+    print("NEXT ROUND!")
+    
+
+    
+    
+
+
+
+    
+
+  
+  

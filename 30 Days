@@ -1,0 +1,7 @@
+for i in range(1, 30):
+  print("Day", i, ":")
+  response = input("")
+  print()
+  day = (f"You thought day {i} was {response}")
+  print(f"{day:^35}")
+  print()

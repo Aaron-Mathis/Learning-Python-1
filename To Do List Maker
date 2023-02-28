@@ -36,5 +36,6 @@ while True:
           toDo.append(newItem)
       print()
       printList()
-      
+  if menu == "quit":
+    break
       

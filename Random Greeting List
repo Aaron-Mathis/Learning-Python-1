@@ -1,0 +1,6 @@
+import random
+
+greetings = ["Hello", "Bonjour", "Hola", "Ni Hao", "Konichiwa", "Guten Tag", "Aloha"]
+
+rand = random.randint(0,6)
+print(f"{greetings[rand]}")

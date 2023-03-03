@@ -1,0 +1,53 @@
+import time, os
+
+toDo = []
+
+def printList():
+  print()
+  counter = 0
+  for i in toDo:
+    counter += 1
+    print(f"{counter}. {i}")
+  print()
+  time.sleep(3)
+  os.system("clear") 
+
+while True:
+  menu = input("What would you like to do to your list:\n add\n remove\n change\n view\n delete the list\n> ")
+  if menu == "add":
+    add = input("What would you like to add? ")
+    toDo.append(add)
+    printList()
+  if menu == "remove":
+    printList()
+    remove = input("What would you like to remove? ")
+    verify = input("Are you sure you want to remove this item? ")
+    if verify == "yes":
+      for i in toDo:
+        counter = len(toDo)
+        counter -= 1  
+        if i == remove:
+          toDo.remove(remove)
+        if counter < 1:
+          print("That item is not in the list.")  
+    printList()
+  if menu == "change":
+    printList()
+    change = input("What item would you like to change? ")
+    newItem = input("To what would you like to change the item? ")
+    for i in toDo:
+      counter = len(toDo)
+      counter -= 1  
+      if i == change:
+        toDo.remove(change)
+        toDo.append(newItem)
+      if counter < 1:
+        print("That item is not in the list.")  
+    printList()    
+  if menu == "delete":
+    verify = input("Are you sure you want to delete the list? ")
+    if verify == "yes":
+      toDo = []
+  if menu == "view":
+    printList()
+    

@@ -1,0 +1,18 @@
+names = []
+
+def printList():
+  print()
+  counter = 0
+  for i in names:
+    counter += 1
+    print(f"{counter}. {i}")
+  print()  
+
+while True:
+  firstName = input("What is the persons's first name? ").strip().capitalize()
+  lastName = input("What is the person's last name? ").strip().capitalize()
+  space = " "
+  fullName = firstName + space + lastName
+  if fullName not in names:
+    names.append(fullName)
+    printList()

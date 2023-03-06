@@ -1,0 +1,14 @@
+while True:
+  firstName = input("What is your first name? ")
+  lastName = input("What is your last name? ")
+  maidenName = input("What is your mother's maiden name? ")
+  city = input("Where were you born? ")
+  firstSWName = firstName[:3] + lastName[:3]
+  lastSWName = maidenName[:3] + city[-3:]
+  print(f"Your Star Wars name is {firstSWName.capitalize()} {lastSWName.capitalize()}.")
+  print()
+  cont = input("Create another name? ")
+  if cont.strip().lower() == "yes":
+    continue
+  else:
+    break

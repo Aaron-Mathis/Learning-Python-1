@@ -1,0 +1,50 @@
+import random, time, os
+
+randomWords = ["pasta", "skyscraper", "dresser", "phoenix", "knight", "water", "firetruck", "chicago", "wallet", "sunglasses", "motorcycle", "bodega", "crumple", "walk", "tomato", "jumping"]
+
+def hangMan():
+  guessedCorrect = []
+  guessed = []
+  counter = 0
+  tempWord = random.choice(randomWords)
+  word = list(tempWord)
+
+  while True:
+    guess = input("> ").strip().lower()
+    if guess in guessed:
+      print("You've already guessed that")
+    if guess not in guessed:
+      guessed.append(guess)
+      for letter in word:
+        if letter in guessedCorrect:
+          print(f"{letter} ", end="")
+        elif letter == guess:
+          print(f"{letter} ", end="")
+          guessedCorrect.append(guess)
+        else:
+          print("_ ", end="")
+    if guess not in word:
+      counter += 1
+    if guessedCorrect == word:
+      os.system("clear")
+      print(word)
+      print()
+      print("You did it, you magnificent bastard!")
+      print("Yippeeeeeee!")
+      time.sleep(3)
+      exit()
+    if counter > 6:
+      print()
+      print("You're out of lives. You lose!")
+      time.sleep(3)
+      exit()
+    print()
+    print()
+    print(f"These are the words you've guessed so far >{guessed}")
+    print()
+    
+
+print("Time for hangman. We've chosen a random word. You've got to guess it, one letter at a time!")
+print()
+print()
+hangMan()

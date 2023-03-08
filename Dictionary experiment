@@ -1,0 +1,9 @@
+myDict = {"name":"", "URL":"", "description":"", "star rating":""}
+
+for name, value in myDict.items():
+  myDict[name] = input(f"Input a {name} > ")
+
+print()
+print("Website Information")
+for name, value in myDict.items():
+  print(f"{name} : {value}")

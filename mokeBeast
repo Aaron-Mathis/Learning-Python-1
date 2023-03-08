@@ -1,0 +1,26 @@
+mokeBeast = {"name":"", "type (earth, water, fire, air)":"", "special":"", "starting HP":"", "starting MP":""}
+
+print("Moke Beast Creator 5000!")
+print()
+for name, value in mokeBeast.items():
+  mokeBeast[name] = input(f"What is your beast's {name}? ")
+  print()
+
+def printBeast():
+  for name, value in mokeBeast.items():
+    print(f"{name} : {value}")
+
+for name, value in mokeBeast.items():
+  if name == "type (earth, water, fire, air)":
+    if value == "earth":
+      print("\033[0;32m", end ="")
+      printBeast()
+    if value == "fire":
+      print("\033[0;31m", end ="")
+      printBeast()
+    if value == "water":
+      print("\033[0;34m", end ="")
+      printBeast()
+    if value == "air":
+      print("\033[0m", end ="")
+      printBeast()

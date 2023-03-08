@@ -1,0 +1,18 @@
+contactCard = {"name":"", "DOB":"", "tnumber":"", "email":"", "address":""}
+
+print("Contact Card")
+print()
+contactCard["name"] = input("Input your name > ")
+print()
+contactCard["DOB"] = input("Input your date of birth > ")
+print()
+contactCard["tnumber"] = input("Input your telephone number > ")
+print()
+contactCard["email"] = input("Input your email > ")
+print()
+contactCard["address"] = input("Input your address > ")
+print()
+print(f"Hello {contactCard['name']}. According to our records, you were born on {contactCard['DOB']}, your telephone number is {contactCard['tnumber']} and your email is {contactCard['email']}.")
+
+
+

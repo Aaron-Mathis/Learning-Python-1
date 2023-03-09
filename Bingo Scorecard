@@ -1,0 +1,40 @@
+import random, os, time
+numbTable = []
+
+def printList():
+  for row in numbTable:
+    for item in row:
+      print(f"{item:^10}", end=" | ")
+    print()  
+
+
+for i in range (0,3):
+  numb = []
+  
+  for i in range(0,3):
+    rand = random.randint(0,90)
+    if rand not in numbTable and rand not in numb:
+      numb.append(rand)
+
+  numbTable.append(numb)  
+  
+numbTable[1][1] = "BINGO"
+
+xs = 0
+while True:
+  os.system("clear")
+  printList()
+  nxt = int(input("Next Number: "))
+  for row in range(3):
+    for item in range(3):
+      if numbTable[row][item] == nxt:
+        numbTable[row][item] = "X"
+        xs += 1
+  if xs == 8:
+    os.system("clear")
+    printList()
+    print()
+    print("You have won!")
+    time.sleep(5)
+    break
+  

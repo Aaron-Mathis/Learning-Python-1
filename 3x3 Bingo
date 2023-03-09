@@ -1,0 +1,17 @@
+import random
+numbTable = []
+
+for i in range (0,3):
+  numb = []
+  
+  for i in range(0,3):
+    rand = random.randint(0,90)
+    if rand not in numbTable and rand not in numb:
+      numb.append(rand)
+
+  numbTable.append(numb)  
+  
+numbTable[1][1] = "BINGO"
+
+for row in numbTable:
+  print(row)

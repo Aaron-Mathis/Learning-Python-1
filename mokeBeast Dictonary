@@ -1,0 +1,34 @@
+import time, os
+
+mokeBeasts ={}
+
+print("Moke Beast Creator 5000!")
+print()
+
+def printBeast():
+  for key, value in mokeBeasts.items():
+    print()
+    print()
+    print(key, end=" > ")
+    for subKey, subValue in value.items():
+      print(subKey,":", subValue, end=" | ")
+    
+
+while True:
+  os.system("clear")
+  name = input("Name: ")
+  type = input("Type (earth, fire, water or air): ")
+  special = input("Special ability: ")
+  startingHP = input("Starting HP: ")
+  startingMP = input("Staring MP: ")
+  mokeBeasts[name] = {"Type": type, "Special": special, "Starting HP": startingHP, "Starting MP": startingMP}
+  printBeast()
+  print()
+  print()
+  cont = input("Continue? ").strip().lower()
+  if cont[0] == "y":
+    continue
+  else:
+    break
+  
+

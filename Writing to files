@@ -1,0 +1,14 @@
+f = open("highScores.txt", "a+")
+
+while True:
+  name = input("What's your name, dude? ")
+  score = input("What was your score? Don't bullshit me, man? ")
+  f.write(f"{name} : {score}\n")
+  print()
+  cont = input("Got another score you need to record? ")
+  if cont.strip().lower()[0] == "y":
+    print()
+    continue
+  else:
+    f.close()
+    break

@@ -1,0 +1,23 @@
+f = open("high.score", "r")
+
+names = []
+scores = []
+while True:
+  contents = f.readline().strip()
+  if contents == "":
+    break
+  aScore = contents.split()
+  names.append(aScore[0])
+  scores.append(int(aScore[1]))
+
+highScore = 0  
+for i in scores:
+  if highScore < i:
+    highScore = i
+
+print("The current high scorer is...")
+for index, i in enumerate(scores):
+  if i == highScore:
+    print(names[index],":", highScore)
+
+

@@ -1,0 +1,23 @@
+import random
+
+ideas =[]
+
+while True:
+  menu = input("Would you like to add an idea, load an idea at random, or quit?\n> ")
+  print()
+  if menu.lower().strip()[0] == "a":
+    f = open("my.ideas", "a+")
+    add = input("What idea would like to add?\n> ")
+    print()
+    ideas.append(add)
+    f.write(add + "\n")
+    f.close()
+  if menu.lower().strip()[0] == "l":
+    f = open("my.ideas", "r")
+    rando = len(ideas)-1
+    rand = random.randint(0, rando)
+    print(ideas[rand])
+    print()
+    f.close()
+  if menu.lower().strip()[0] == "q":
+    break

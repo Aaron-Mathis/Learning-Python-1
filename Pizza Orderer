@@ -1,0 +1,30 @@
+pizzas = []
+
+try:
+  f = open("pizzalist.txt", "r")
+  pizzas = eval(f.read)
+  f.close()
+
+except:
+  print("Unable to load file. A new one will be created.") 
+  print()
+  print()
+
+print("Welcome to Ron's Pizza! ")
+print()
+while True:
+  pizzaNumb = input("How many pizzas would you like today? ")
+  pizzaSize = input("\nHow big would you like your pizzas? Input 2 for small, 3 for medium, 4 for large. Thank you. ")
+  pizzaCost = int(pizzaNumb) * int(pizzaSize)
+  print("\nYour order will cost ", pizzaCost, "dollars.")
+  name = input("\nCan I get a name for that order? ")
+  row  =[name, pizzaNumb, pizzaSize, pizzaCost]
+  pizzas.append(row)
+  again = input("\nWould you like to place another order? ")
+  print()
+  if again.strip().lower()[0] == "y":
+    continue
+  if again.strip().lower()[0] == "n":
+    f = open("pizzalist.txt", "a+")
+    f.write(str(pizzas) + "\n")
+    f.close()

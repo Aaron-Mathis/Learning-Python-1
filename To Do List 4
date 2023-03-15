@@ -1,0 +1,72 @@
+import random, os, time
+toDo = [["Task", "Due Date", "Priority"]]
+
+f = open("toDo.txt","r")
+toDo = eval(f.read())
+f.close()
+
+def printList():
+  for row in toDo:
+    for item in row:
+      print(f"{item:^10}", end=" | ")
+    print()  
+
+while True:
+  os.system("clear")
+  printList()
+  print()
+  menu = input("Would you like to add, remove, or change an item? ")
+  
+  
+  if menu.strip().lower()[0] == "a":
+    os.system("clear")
+    printList()
+    print()
+    task = input("What is the task? ")
+    due = input("By what date is the task due? ")
+    priority = input("Is the task of low, medium or high priority? ")
+    row = [task, due, priority]
+    toDo.append(row)
+    print()
+    print("Added.")
+    
+  if menu.strip().lower()[0] == "r":
+    os.system("clear")
+    printList()
+    print()  
+    remove = input("What would you like to remove? ")
+    for row in range(3):
+      for item in range(3):
+        if remove == toDo[row][item]:
+          toDo.remove(row)
+          print()
+          print("Removed.")
+
+  if menu.strip().lower()[0] == "c":
+    os.system("clear")
+    printList()
+    print()
+    change = input("What task would you like to change? ")
+    for row in toDo:
+      if change in row:
+          toDo.remove(row)
+          task = input("What is the task? ")
+          due = input("By what date is the task due? ")
+          priority = input("Is the task of low, medium or high priority? ")
+          row = [task, due, priority]
+          toDo.append(row)
+          print()
+          print("Changed.")
+         
+  print()
+  cont = input("Would you like to see the menu again or exit? ")
+  if cont.strip().lower()[0] == "e":
+    f = open("toDo.txt", "w") 
+    f.write(str(toDo)) 
+    f.close()
+    break
+  else:
+    continue
+    
+  
+

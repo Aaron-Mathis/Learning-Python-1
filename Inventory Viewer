@@ -1,0 +1,51 @@
+inventory = []
+
+try:
+  f = open("inventory.txt", "r")
+  inventory = eval(f.read)
+  f.close()
+
+except:
+  print("No file could be loaded. One will be created.\n")
+
+while True:
+  print("Welcome to your inventory.\n")
+  menu  = input("Would you like to add, view, remove something, or quit?\n> ")
+  print()
+  
+  if menu.lower().strip()[0] == "a":
+    add = input("What would like to add?\n> ").strip().capitalize()
+    print()
+    f = open("inventory.txt", "a+")
+    f.write(add + "\n")
+    f.close()
+    inventory.append(add)
+    print("Item has been added!\n")
+
+  if menu.lower().strip()[0] == "r":
+    remove = input("What would you like to remove?\n> ").strip().capitalize
+    print()
+    if remove not in inventory:
+      print("That item is not in your inventory")
+      continue
+    else:  
+      inventory.remove(remove)
+      f = open("inventory.txt", "w").close()
+      f = open("inventory.txt", "a+")
+      for i in inventory:
+       f.write(i + "\n")
+      print("Item has been removed! \n")  
+
+  if menu.lower().strip()[0] == "v":
+    view = input("What item would you like to view?\n> ").strip().capitalize()
+    print("You have", inventory.count(view) , view)
+    print()
+
+  if menu.lower().strip()[0] == "q":
+    print("Bye!")
+    break
+    
+   
+
+        
+   

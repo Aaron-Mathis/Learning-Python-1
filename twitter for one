@@ -1,0 +1,40 @@
+from replit import db
+import datetime, os, time
+
+while True:
+  menu = input("Would you like to view tweets, create a new tweet, or quit?\n> ")
+  
+  if menu.strip().lower()[0] == "a":
+    tweet = input("What would you like to tweet?\n> ")
+    timestamp = datetime.datetime.now()
+    code = f"Tweet{timestamp}"
+    db[code] = tweet
+    
+  if menu.strip().lower()[0] == "v":
+    matches = db.prefix("Tweet")
+    matches = matches[::-1]
+    counter = 0
+    for i in matches:
+      print(db[i])
+      counter += 1
+      if counter >= 10:
+        cont = input("Do you want to continue? ")
+        if cont.lower().strip()[0] == "n":
+          break
+        else:
+          continue
+
+  if menu.strip().lower()[0] == "q":
+    break
+          
+        
+    
+
+      
+
+    
+      
+    
+    
+    
+

@@ -1,0 +1,39 @@
+from replit import db
+import datetime
+password = "pooplol"
+passwrd = input("What is the password? ")
+print()
+
+if passwrd == password:
+  while True:
+    print("Welcome to your diary. ")
+    print()
+    menu = input("Would you like to add an entry, view your most recent entry, or quit? ")
+    
+    if menu.strip().lower()[0] == "a":
+      entry = input("> ")
+      timestamp = f"Entry:{datetime.datetime.now()}"
+      db[timestamp] = entry
+      
+    if menu.strip().lower()[0] == "v":
+      matches = db.prefix("Entry")
+      matches = matches[::-1]
+      for i in matches:
+        print(db[i])
+        print()
+        another = input("Do you want to see another? ")
+        if another.strip().lower()[0] == "y":
+          continue
+        else:  
+          break
+
+    if menu.strip().lower()[0] == "q":
+      break
+    
+    
+
+
+  
+
+  
+  

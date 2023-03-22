@@ -1,0 +1,16 @@
+word = input("Input a word\n> ").lower().strip()
+reverseword = ''
+for i in range(len(word),0,-1):
+  reverseword += word[i-1]
+
+print()
+if word == reverseword:
+  print("That's a palindrome, baby! Yee haw!")
+
+else:
+  print("That's not a palindrome.")
+    
+
+  
+  
+    

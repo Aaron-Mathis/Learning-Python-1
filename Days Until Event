@@ -1,0 +1,15 @@
+import datetime
+
+today = datetime.date.today()
+
+year = int(input("What year is your event? "))
+month = int(input("What month is your event? "))
+day = int(input("What day of the month is your event? "))
+
+event = datetime.date(year, month, day)
+
+difference = event - today
+difference = difference.days
+
+print("Your event is in", difference, "days.")
+
